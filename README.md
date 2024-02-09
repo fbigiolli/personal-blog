@@ -1,14 +1,28 @@
 # Blog personal
-### Usando Django y Bootstrap
-En este repositorio se encuentra el código correspondiente a un blog que creé a modo de proyecto para aprender sobre Django, Bootstrap y HTML.
+En este repositorio se encuentra el código correspondiente a un blog que creé a modo de proyecto para aprender sobre **Django, Bootstrap y HTML.** También utilicé **Ionicons** para mejorar el aspecto del blog. Es una web responsive.
+
+Para correrlo localmente, ejecutar (en personal_blog, donde se encuentra el archivo manage.py):
+```
+python manage.py runserver 
+```
+y dirigirse a http://127.0.0.1:8000/
 
 ## Dependencias
 - crispy-forms
-- crispy-bootstrap4
+```
+pip install django-crispy-forms
+```
+- crispy-bootstrap5
+```
+pip install crispy-bootstrap5
+```
 - tinymce
+```
+pip install django-tinymce
+```
 
 ## Posteos
-Los posteos se realizan desde la página admin provista por Django, donde cuenta con un RTE (Rich Text Editor) integrado para postear. En el index se muestran todos los posts, y en la seccion Featured se muestran sólamente aquellos posts que fueron marcados como featured al crearlos.
+Los posteos se realizan desde la página admin provista por Django, donde cuenta con un RTE (Rich Text Editor) (TinyMCE) integrado para postear. En el index se muestran todos los posts, y en la seccion Featured se muestran sólamente aquellos posts que fueron marcados como featured al crearlos.
 
 En la vista detallada de cada post se cuenta con la posibilidad de likear el post y comentarlo. Tanto los posts como los comentarios pueden ser eliminados (sólamente por aquel que los creó).
 
