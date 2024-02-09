@@ -16,7 +16,7 @@ En la vista detallada de cada post se cuenta con la posibilidad de likear el pos
 El blog cuenta con un sistema de usuarios. El usuario se registra, y luego se loggea para poder comentar y likear posts.
 
 ## TODO:
-- [] Landing page en caso de registro inválido.
-- [] Sistema de posteo para cualquier usuario registrado
-- [] Respuestas a comentarios
-- [] RTE para comentarios
+- [ ] Landing page en caso de registro inválido.
+- [ ] Sistema de posteo para cualquier usuario registrado
+- [ ] Respuestas a comentarios
+- [ ] RTE para comentarios
