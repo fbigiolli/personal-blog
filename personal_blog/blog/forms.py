@@ -7,5 +7,6 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['content']
         widgets = {
-            'content': TinyMCE(),
+            'content': TinyMCE(attrs={'cols': 10, 'rows': 5}),
         }
+

@@ -20,6 +20,10 @@ pip install crispy-bootstrap5
 ```
 pip install django-tinymce
 ```
+- bleach
+```
+pip install bleach
+```
 
 ## Posteos
 Los posteos se realizan desde la página admin provista por Django, donde cuenta con un RTE (Rich Text Editor) (TinyMCE) integrado para postear. En el index se muestran todos los posts, y en la seccion Featured se muestran sólamente aquellos posts que fueron marcados como featured al crearlos.

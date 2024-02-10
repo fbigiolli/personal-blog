@@ -133,3 +133,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 360,
+    'width': 900,
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'plugins': 'paste',
+    'paste_as_text': True,
+    'toolbar': 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+}

@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Article, Comment
 from .forms import CommentForm
+import bleach
 
 
 class Index(ListView):
@@ -45,7 +46,6 @@ class LikeArticle(View):
         article.save()
         return redirect('detail_article', pk)
 
-# CORREGIR ESTO, NO ANDA
 class CommentArticle(CreateView):
     model = Comment
     form_class = CommentForm
@@ -53,9 +53,11 @@ class CommentArticle(CreateView):
     def form_valid(self, form):
         article_pk = self.kwargs['pk']
         article = get_object_or_404(Article, pk=article_pk)
+        cleaned_content = bleach.clean(form.cleaned_data['content'], tags=['p', 'br', 'strong', 'em', 'a'], attributes={'a': ['href', 'title']})
         comment = form.save(commit=False)
         comment.article = article
         comment.author = self.request.user
+        comment.content = cleaned_content
         comment.save()
         return redirect(article.get_absolute_url())
 
