@@ -60,7 +60,7 @@
             <form method="post" action="{% url 'comment_article' object.pk %}">
                 {% csrf_token %}
                 <ul class="list-group my-3">
-                    {{ comment_form }}
+                    {{ comment_form|crispy }}
                 </ul>
                 <button class="btn btn-outline-primary" type="submit">Send comment</button>
             </form>
