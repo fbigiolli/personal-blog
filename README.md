@@ -40,7 +40,7 @@ El blog cuenta con un sistema de usuarios. El usuario se registra, y luego se lo
 ![SSHOT3](https://github.com/fbigiolli/personal-blog/assets/102247438/968885e3-dfa9-422a-85b9-4f4d26eb7993)
 
 ## TODO:
-- [ ] Landing page en caso de registro/comment inválido.
+- [X] Landing page en caso de registro/comment inválido.
 - [ ] Sistema de posteo para cualquier usuario registrado
 - [ ] Respuestas a comentarios
 - [X] RTE para comentarios

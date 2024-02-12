@@ -1,9 +1,12 @@
 from typing import Any
+from django.forms import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib import messages
 from .models import Article, Comment
 from .forms import CommentForm
 import bleach
@@ -60,6 +63,12 @@ class CommentArticle(CreateView):
         comment.content = cleaned_content
         comment.save()
         return redirect(article.get_absolute_url())
+    
+    def form_invalid(self, form):
+        article_pk = self.kwargs['pk']
+        messages.error(self.request, 'Comment could not be added. Please correct the errors.')
+        return redirect(reverse_lazy('detail_article', kwargs={'pk': article_pk}))
+
 
 class DeleteArticleView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Article
